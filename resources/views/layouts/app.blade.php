@@ -47,13 +47,13 @@
                         @else
                         <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:30px; height:30px; border-radius: 50%; margin-top:5px;">
                             <li class="nav-link" style="font-weight:bold;">
-                                {{ Auth::user()->status->title }} 
+                                {{ Auth::user()->status->title ?? 'No Title' }} 
                             </li>
                             <li class="nav-link" style="font-weight:bold;">
                                 {{ Auth::user()->club->name }} 
                             </li>
                             <li class="nav-link" style="font-weight:bold;">
-                                {{ Auth::user()->location->city }}  
+                                {{ optional(Auth::user()->location)->city }}  
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

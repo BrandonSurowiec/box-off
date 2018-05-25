@@ -21,7 +21,8 @@ class CreateUsersTable extends Migration
             $table->integer('location_id')->default(1);
             $table->integer('club_id')->default(1);
             $table->string('password');
-            $table->string('avatar')->default('default.jpg'); 
+            $table->string('about')->nullable();
+            $table->string('avatar')->default('default.jpg');
             $table->rememberToken(); 
             $table->timestamps();
         });
